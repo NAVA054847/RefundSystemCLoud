@@ -3,7 +3,7 @@
     args:
       - '-c'
       - >
-        docker build -f ./RefundSystem/RefundSystem.Api/Dockerfile ./RefundSystem --force-rm -t
+        docker build -f ./RefundSystem/RefundSystem.API/Dockerfile ./RefundSystem --force-rm -t
         us-central1-docker.pkg.dev/refundprojeckt-489807/test/refund-system-api:$COMMIT_SHA &&
         docker push us-central1-docker.pkg.dev/refundprojeckt-489807/test/refund-system-api:$COMMIT_SHA
     entrypoint: bash
