@@ -4,8 +4,8 @@
       - '-c'
       - >
         docker build -f ./RefundSystem/RefundSystem.Api/Dockerfile ./RefundSystem --force-rm -t
-        us-central1-docker.pkg.dev/refundprojeckt-489807/test/RefundSystem.Api:$COMMIT_SHA &&
-        docker push us-central1-docker.pkg.dev/refundprojeckt-489807/test/RefundSystem.Api:$COMMIT_SHA
+        us-central1-docker.pkg.dev/refundprojeckt-489807/test/RefundSystemApi:$COMMIT_SHA &&
+        docker push us-central1-docker.pkg.dev/refundprojeckt-489807/test/RefundSystemApi:$COMMIT_SHA
     entrypoint: bash
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
@@ -13,7 +13,7 @@
       - run
       - deploy
       - RefundSystem.Api  
-      - --image=us-central1-docker.pkg.dev/refundprojeckt-489807/test/RefundSystem.Api:$COMMIT_SHA
+      - --image=us-central1-docker.pkg.dev/refundprojeckt-489807/test/RefundSystemApi:$COMMIT_SHA
       - --region=me-west1
       - --platform=managed
 options:
