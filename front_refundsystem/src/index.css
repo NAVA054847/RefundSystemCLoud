@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gov-blue: #0072BC;
+  --gov-blue-dark: #005a94;
+  --gov-blue-light: #e6f2fa;
+  --gov-gray: #f5f5f5;
+  --gov-border: #e0e0e0;
+  --gov-text: #333333;
+  --gov-success: #2e7d32;
+  --gov-error: #c62828;
+}
+
+body {
+  margin: 0;
+  font-family: 'Heebo', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--gov-gray);
+  color: var(--gov-text);
+  direction: rtl;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}

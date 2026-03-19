@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RefundSystem.API", "RefundSystem.API\RefundSystem.API.csproj", "{174CE72A-08A2-4119-B78D-4AAFD564DCBB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RefundSystem.Core", "RefundSystem.Core\RefundSystem.Core.csproj", "{7CDDB13B-8537-4475-9759-C8D3AB63FC34}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RefundSystem.Service", "RefundSystem.Service\RefundSystem.Service.csproj", "{10310238-825D-4C9A-8914-DB81E272B8CC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RefundSystem.Data", "RefundSystem.Data\RefundSystem.Data.csproj", "{72B00AC9-430B-4F86-8154-5D65F4C007AE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{7BD96F70-41A4-4A26-9D19-979612416FA9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8602582D-D519-4E8F-BCCA-E0B66793810D}"
+	ProjectSection(SolutionItems) = preProject
+		.gcloudignore = .gcloudignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{174CE72A-08A2-4119-B78D-4AAFD564DCBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{174CE72A-08A2-4119-B78D-4AAFD564DCBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{174CE72A-08A2-4119-B78D-4AAFD564DCBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{174CE72A-08A2-4119-B78D-4AAFD564DCBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CDDB13B-8537-4475-9759-C8D3AB63FC34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CDDB13B-8537-4475-9759-C8D3AB63FC34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CDDB13B-8537-4475-9759-C8D3AB63FC34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CDDB13B-8537-4475-9759-C8D3AB63FC34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10310238-825D-4C9A-8914-DB81E272B8CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10310238-825D-4C9A-8914-DB81E272B8CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10310238-825D-4C9A-8914-DB81E272B8CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10310238-825D-4C9A-8914-DB81E272B8CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72B00AC9-430B-4F86-8154-5D65F4C007AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72B00AC9-430B-4F86-8154-5D65F4C007AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72B00AC9-430B-4F86-8154-5D65F4C007AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72B00AC9-430B-4F86-8154-5D65F4C007AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BD96F70-41A4-4A26-9D19-979612416FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BD96F70-41A4-4A26-9D19-979612416FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BD96F70-41A4-4A26-9D19-979612416FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BD96F70-41A4-4A26-9D19-979612416FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F2742B53-EFDA-4C52-A777-A511A20238E8}
+	EndGlobalSection
+EndGlobal
