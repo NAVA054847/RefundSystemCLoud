@@ -12,7 +12,7 @@
     args:
       - run
       - deploy
-      - RefundSystem.Api  
+      - refund-system-api  
       - --image=us-central1-docker.pkg.dev/refundprojeckt-489807/test/refund-system-api:$COMMIT_SHA
       - --region=me-west1
       - --platform=managed
