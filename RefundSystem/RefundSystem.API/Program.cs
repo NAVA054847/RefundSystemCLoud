@@ -25,7 +25,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<RefundSystemDbContext>(options =>
     options.UseSqlServer(
-        builder.Configuration.GetConnectionString("DefaultConnection"),
+        "Server=34.57.39.107,1433;Database=RefundSystemDB;User Id=refundadmin;Password=NAVAlederman100!;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;",
         sqlOptions => sqlOptions.EnableRetryOnFailure(
             maxRetryCount: 3,
             maxRetryDelay: TimeSpan.FromSeconds(10),
