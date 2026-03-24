@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
 using RefundSystem.Core.Interfaces;
 using RefundSystem.Data.Context;
@@ -5,6 +6,13 @@ using RefundSystem.Data.Repository;
 using RefundSystem.Service.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+    options.KnownNetworks.Clear();
+    options.KnownProxies.Clear();
+});
 
 // Add services to the container.
 
@@ -42,14 +50,14 @@ builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-
-    app.UseSwagger();
-    app.UseSwaggerUI();
-
-
-//app.UseHttpsRedirection();
-
+// סדר: מאחורי Cloud Run — ForwardedHeaders; אחר כך Routing + CORS לפני Authorization,
+// כדי שבקשות OPTIONS (preflight) יקבלו כותרות CORS.
+app.UseForwardedHeaders();
+app.UseRouting();
 app.UseCors("AllowFrontend");
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseAuthorization();
 
