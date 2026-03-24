@@ -1,0 +1,30 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - '-c'
+      - >
+        docker build -f ./front_refundsystem/deploy/Dockerfile ./front_refundsystem --force-rm -t
+        us-central1-docker.pkg.dev/refundprojeckt-489807/test/refund-system-web:$COMMIT_SHA &&
+        docker push us-central1-docker.pkg.dev/refundprojeckt-489807/test/refund-system-web:$COMMIT_SHA
+    entrypoint: bash
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - refund-system-web
+      - --image=us-central1-docker.pkg.dev/refundprojeckt-489807/test/refund-system-web:$COMMIT_SHA
+      - --region=me-west1
+      - --platform=managed
+      # הגדרת הפורט שהאפליקציה מאזינה לו (למשל 8080)
+      - --port=80
+      # הפיכת השירות לציבורי (מאפשר גישה ללא אימות)
+      - --allow-unauthenticated
+      # הגדרת משאבים (אופציונלי)
+      - --cpu=1
+      - --memory=512Mi
+      # הגדרת כמות קונטיינרים מינימלית/מקסימלית (אופציונלי)
+      - --min-instances=1
+      - --max-instances=10
+options:
+  logging: CLOUD_LOGGING_ONLY

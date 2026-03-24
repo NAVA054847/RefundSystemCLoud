@@ -1,6 +1,10 @@
 import axios from "axios";
 
-const url = "https://localhost:7151/api/Refund";
+//כתובת של השרת המקומי
+//const url = "https://localhost:7151/api/Refund";
+
+//כתובת של השר בענן
+const url = "https://refund-system-api-495207073032.us-central1.run.app/api/Refund";
 
 export const getPendingRequests = () => {
   return axios.get(`${url}/pending`);
