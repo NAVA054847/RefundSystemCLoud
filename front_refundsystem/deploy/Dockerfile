@@ -4,9 +4,9 @@ WORKDIR /app
 COPY package.json ./
 RUN npm install
 COPY . .
-RUN npm run build --production
+RUN npm run build
 
-FROM fholzer/nginx-brotli:v1.12.2
+FROM nginx:1.26-alpine
 
 WORKDIR /etc/nginx
 COPY deploy/nginx.conf /etc/nginx/nginx.conf

@@ -4,8 +4,8 @@ steps:
       - '-c'
       - >
         docker build -f ./front_refundsystem/deploy/Dockerfile ./front_refundsystem --force-rm -t
-        us-central1-docker.pkg.dev/refundprojeckt-489807/test/refund-system-web:$COMMIT_SHA &&
-        docker push us-central1-docker.pkg.dev/refundprojeckt-489807/test/refund-system-web:$COMMIT_SHA
+        us-central1-docker.pkg.dev/refundprojeckt-489807/test/refund-system-web:${_TAG} &&
+        docker push us-central1-docker.pkg.dev/refundprojeckt-489807/test/refund-system-web:${_TAG}
     entrypoint: bash
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
@@ -13,8 +13,8 @@ steps:
       - run
       - deploy
       - refund-system-web
-      - --image=us-central1-docker.pkg.dev/refundprojeckt-489807/test/refund-system-web:$COMMIT_SHA
-      - --region=me-west1
+      - --image=us-central1-docker.pkg.dev/refundprojeckt-489807/test/refund-system-web:${_TAG}
+      - --region=us-central1
       - --platform=managed
       # הגדרת הפורט שהאפליקציה מאזינה לו (למשל 8080)
       - --port=80
@@ -28,3 +28,6 @@ steps:
       - --max-instances=10
 options:
   logging: CLOUD_LOGGING_ONLY
+
+substitutions:
+  _TAG: 'latest'
